@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+PACKAGE_PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+cd "${PACKAGE_PROJECT_ROOT}"
+
+export PATH="$HOME/.local/bin:$PATH"
+export PYTHONUNBUFFERED=1
+
+DATASETS="${DATASETS:-NASDAQ NYSE SP500}"
+FINETUNE_RUNS="${FINETUNE_RUNS:-10}"
+PRETRAIN_EPOCHS="${PRETRAIN_EPOCHS:-20}"
+FINETUNE_EPOCHS="${FINETUNE_EPOCHS:-100}"
+USE_GPU="${USE_GPU:-1}"
+PIN_MEMORY="${PIN_MEMORY:-1}"
+
+DATASETS="${DATASETS}" \
+FINETUNE_RUNS="${FINETUNE_RUNS}" \
+PRETRAIN_EPOCHS="${PRETRAIN_EPOCHS}" \
+FINETUNE_EPOCHS="${FINETUNE_EPOCHS}" \
+PRETRAIN_TARGET_MODE="return_residual" \
+MAE_MASK_RATIO="0.3" \
+RET_FEATURE_INDEX="${RET_FEATURE_INDEX:--1}" \
+USE_GPU="${USE_GPU}" \
+PIN_MEMORY="${PIN_MEMORY}" \
+MODEL_ID_PREFIX="model_random_token_return_residual_dtw_712" \
+bash script/SATRA/001_20260615_model_two_stage_nasdaq_nyse_environment_a.sh

@@ -1,0 +1,60 @@
+# OS and editor state
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+
+# Python environment
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Legacy and raw data locations
+dataset/
+dataset_norm/
+raw_data/
+preData/
+
+# Generated experiment artifacts
+results/
+results_*/
+result.txt
+/run.md
+checkpoints/
+outputs/
+logs/
+runs/
+wandb/
+run_logs/
+remote_checks/
+
+# Historical generated artifacts
+experiments/runs/
+experiments/nohup_logs/
+experiments/data_analysis/outputs/
+
+# Raw and legacy data import paths
+data/raw/
+data/external/
+data/dataset/
+data/preData/
+data/processed/
+external_data/
+
+# Model and binary artifacts
+*.pt
+*.pth
+*.ckpt
+*.pth.tar
+*.pdf
+
+# Local archives and backups
+stock_prediction_ccf_2022_2026/
+archive/raw_imports/
+backups/
+*.tar.gz
+*.zip
+*.backup.tex
